@@ -1,12 +1,29 @@
 import React from 'react';
+import styled from 'style-componenets';
 
-const Header = () => {
+const WrapperHeader = styled.div`
+display: flex;
+flex-direction: row;
+align-item: center;
+justify-content: center;
+`;
+
+const Container = styled.div`
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+align-item: center;
+width: 90%;
+max-width: 60rem;
+`;
+
+function Header () {
   return (
     <WrapperHeader>
       <Container>
-        <div className='header-logo'>
+        <div className="header-logo">
           <img src="" alt="logo"/>
-          <hi>Space Traverlers&apos; Hub</hi>
+          <h1>Space Traverlers&apos; Hub</h1>
         </div>
         <nav>
           <ul>
@@ -19,5 +36,5 @@ const Header = () => {
       </Container>
     </WrapperHeader>
   );
-}
+};
 export default Header;
