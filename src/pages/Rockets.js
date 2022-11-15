@@ -1,9 +1,16 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
+import { incrementRocket } from '../redux/rockets/rockets';
 
-const Rockets = () => (
-  <section>
-    Rockets
-  </section>
-);
-
+function Rockets() {
+  const dispatch = useDispatch();
+  return (
+    <section>
+      Rockets
+      <button type="button" onClick={() => dispatch(incrementRocket())}>
+        Click Me!
+      </button>
+    </section>
+  );
+}
 export default Rockets;
