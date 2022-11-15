@@ -6,7 +6,7 @@ const store = configureStore({
   reducer: {
     rockets: reducersRockets,
   },
-  middleware: [logger]
+  middleware: [logger],
 });
 
 export default store;
