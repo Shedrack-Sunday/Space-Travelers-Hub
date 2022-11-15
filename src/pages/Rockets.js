@@ -2,7 +2,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { incrementRocket } from '../redux/rockets/rockets';
 
-function Rockets = () => { 
+function Rockets() { 
   const dispatch = useDispatch();
   return (
   <section>
