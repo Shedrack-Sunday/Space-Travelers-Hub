@@ -56,3 +56,14 @@ header > nav > ul {
   gap: 20px;
   font-size: 1.5rem;
 }
+
+header > nav a {
+  text-decoration: none;
+  color: gray;
+  transition: all 0.2s;
+}
+
+header > nav a.active {
+  text-decoration: underline;
+  color: black;
+}
