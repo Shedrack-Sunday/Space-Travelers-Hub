@@ -1,3 +1,4 @@
+/* eslist-disable */
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { selectRockets, selectStatusRocket } from '../redux/rockets/rockets';
@@ -10,8 +11,8 @@ function Rockets() {
   return (
     <section>
       <h1>Rockets</h1>
-      {status === 'done' &&
-        rockets.map((rocket) => (
+      {status === 'done'
+        && rockets.map((rocket) => (
           <div key={rocket.id}>
             <p>{`${rocket.name} ${rocket.type}`}</p>
             <img
