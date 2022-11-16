@@ -11,10 +11,11 @@ import './App.css';
 
 function App() {
   const API_ROCKETS = 'https://api.spacexdata.com/v3/rockets';
+  const API_MISSIONS = 'https://api.spacexdata.com/v3/missions';
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchApiRockets(API_ROCKETS));
-    dispatch(getMissions());
+    dispatch(getMissions(API_MISSIONS));
   }, []);
   return (
     <Router className="App">
