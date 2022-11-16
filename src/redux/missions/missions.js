@@ -1,4 +1,4 @@
-import { createAsyncThunk } from '@reduxjs/toolkit';
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
 const GET_MISSIONS = 'space-travelers-hub/missions/GET_MISSIONS';
 
@@ -7,17 +7,6 @@ const initialState = {
   status: [],
 };
 
-export default function missionReducer(state = initialState, action) {
-  switch (action.type) {
-    case `${GET_MISSIONS}/fulfilled`: return {
-      missions: (state.missions, action.payload),
-      status: state.status,
-    };
-    default:
-      return state;
-  }
-}
-
 export const getMissions = createAsyncThunk(
   GET_MISSIONS,
   async (url) => {
@@ -25,3 +14,19 @@ export const getMissions = createAsyncThunk(
     return response;
   },
 );
+
+const missionSlice = createSlice({
+  name: 'missionState',
+  initialState,
+  reducers: {
+  },
+  extraReducers: (builder) => {
+    builder
+      .addCase(getMissions.fulfilled, (state, action) => ({
+        ...state,
+        missions: action.payload,
+      }));
+  },
+});
+
+export default missionSlice.reducer;
