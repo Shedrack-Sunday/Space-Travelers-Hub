@@ -16,11 +16,13 @@ const Missions = () => {
           </tr>
         </thead>
         <tbody>
-          {missionArray.missions.map((mission) => (
+          {missionArray.map((item) => (
             <Mission
-              key={mission.mission_id}
-              mission={mission.mission_name}
-              description={mission.description}
+              key={item.mission_id}
+              id={item.mission_id}
+              mission={item.mission_name}
+              description={item.description}
+              isReserved={(('reserved' in item) ? item.reserved : false)}
             />
           ))}
         </tbody>
