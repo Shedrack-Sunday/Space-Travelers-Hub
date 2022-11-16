@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import Mission from '../components/Mission';
 
 const Missions = () => {
-  const missionArray = useSelector((state) => state.missionReducer);
+  const missionArray = useSelector((state) => state.missions);
   return (
     <section>
       <table>
@@ -16,12 +16,11 @@ const Missions = () => {
           </tr>
         </thead>
         <tbody>
-          {missionArray.map((mission) => (
+          {missionArray.missions.map((mission) => (
             <Mission
-              key={mission.key}
-              mission={mission.mission}
+              key={mission.mission_id}
+              mission={mission.mission_name}
               description={mission.description}
-              status={mission.status}
             />
           ))}
         </tbody>
