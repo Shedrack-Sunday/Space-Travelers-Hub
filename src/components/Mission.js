@@ -1,14 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
+import { joinMission } from '../redux/missions/missions';
 
 const Mission = (props) => {
-  const { mission, description } = props;
+  const {
+    id, mission, description, isReserved,
+  } = props;
+  const dispatch = useDispatch();
   return (
     <tr>
       <td>{mission}</td>
       <td>{description}</td>
-      <td>Status</td>
-      <td><button type="button">Run Test</button></td>
+      <td>{isReserved ? 'Active Mebmber' : 'Not a Memebr'}</td>
+      <td><button type="button" onClick={() => (dispatch(joinMission(id)))}>Join Mission</button></td>
     </tr>
   );
 };
@@ -16,6 +21,8 @@ const Mission = (props) => {
 Mission.propTypes = {
   mission: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
+  isReserved: PropTypes.bool.isRequired,
+  id: PropTypes.string.isRequired,
 };
 
 export default Mission;
