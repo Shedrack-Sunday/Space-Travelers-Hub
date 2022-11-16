@@ -1,12 +1,14 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Bookstore CRM
+# Space-travelers-hub
 
-> The Bookstore is a website similar to the "Awesome Books" with following capabilities:
+> The Wrb app contains three pages which consist of a rocket, missions and profile page
+> the Rockets can be reserved while the missions can be joined.
+> All data comes from an external API call
 
- - Display a list of books.
- - Add a book.
- - Remove a selected book.
+ - Display a list of Rockets.
+ - Navigation to missions and profile tab.
+ - Preseve a rocket or join a mission feature.
 
 
 ## Built With
@@ -17,7 +19,6 @@
 - ES6
 - HTML5
 - CSS3
-- Webpack
 
 ## Live Demo
 
