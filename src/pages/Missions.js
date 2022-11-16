@@ -5,7 +5,7 @@ import Mission from '../components/Mission';
 const Missions = () => {
   const missionArray = useSelector((state) => state.missions);
   return (
-    <section>
+    <section id="missionSection">
       <table>
         <thead>
           <tr>
