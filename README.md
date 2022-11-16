@@ -2,7 +2,7 @@
 
 # Space-travelers-hub
 
-> The Wrb app contains three pages which consist of a rocket, missions and profile page
+> The Web app contains three pages which consist of a rocket, missions and profile page
 > the Rockets can be reserved while the missions can be joined.
 > All data comes from an external API call
 
