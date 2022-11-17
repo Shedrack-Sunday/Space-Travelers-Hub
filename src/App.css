@@ -73,27 +73,27 @@ section {
   max-width: 60rem;
 }
 
-.CardContainer { 
+.CardContainer {
   margin: 1rem auto;
   padding: 0.5rem;
   display: grid;
   grid-template-columns: 1fr 2fr;
   grid-template-rows: auto;
-  gap: 0px 0px;
+  gap: 0 0;
   border-radius: 5px;
-  box-shadow: 10px 0px 53px -20px rgba(0, 0, 0, 0.43);
-  -webkit-box-shadow: 10px 0px 53px -20px rgba(0, 0, 0, 0.43);
-  -moz-box-shadow: 10px 0px 53px -20px rgba(0, 0, 0, 0.43);
+  box-shadow: 10px 0 53px -20px rgba(0, 0, 0, 0.43);
+  -webkit-box-shadow: 10px 0 53px -20px rgba(0, 0, 0, 0.43);
+  -moz-box-shadow: 10px 0 53px -20px rgba(0, 0, 0, 0.43);
 }
 
-.ImgContainer { 
+.ImgContainer {
   width: 100%;
   padding: 0;
   overflow: hidden;
   border-radius: 5px;
 }
 
-.MainContainer { 
+.MainContainer {
   display: flex;
   flex-direction: column;
   padding: 0.5rem;
@@ -102,7 +102,7 @@ section {
   text-align: left;
 }
 
-.button { 
+.button {
   font-size: 1.2rem;
   font-weight: bold;
   color: #fff;
