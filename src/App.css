@@ -80,3 +80,46 @@ section {
 #missionSection table > tbody > tr:nth-child(odd) {
   background-color: rgb(236, 236, 236);
 }
+
+.badge {
+  background-color: gray;
+  color: white;
+  border-radius: 10px;
+  padding: 3px;
+  text-align: center;
+  transition: all 0.3s;
+}
+
+.badge.active {
+  background-color: #18a2b8;
+}
+
+#missionSection button {
+  background-color: transparent;
+  border: 1px solid gray;
+  color: gray;
+  border-radius: 10px;
+  padding: 3px;
+  transition: all 0.2s;
+}
+
+#missionSection button:hover {
+  background-color: gray;
+  border: 1px solid gray;
+  color: white;
+}
+
+#missionSection button.leave {
+  background-color: transparent;
+  border: 1px solid tomato;
+  color: tomato;
+  border-radius: 10px;
+  padding: 3px;
+  transition: all 0.2s;
+}
+
+#missionSection button.leave:hover {
+  background-color: tomato;
+  border: 1px solid tomato;
+  color: white;
+}
