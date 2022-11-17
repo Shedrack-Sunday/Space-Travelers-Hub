@@ -12,8 +12,8 @@ const Mission = (props) => {
     <tr>
       <td>{mission}</td>
       <td>{description}</td>
-      <td>{isReserved ? 'Active Mebmber' : 'Not a Memebr'}</td>
-      {isReserved ? <td><button type="button" onClick={() => (dispatch(leaveMission(id)))}>Leave Mission</button></td> : <td><button type="button" onClick={() => (dispatch(joinMission(id)))}>Join Mission</button></td>}
+      {isReserved ? <td><div className="badge active">Active Mebmber</div></td> : <td><div className="badge">Not a Memebr</div></td>}
+      {isReserved ? <td><button className="leave" type="button" onClick={() => (dispatch(leaveMission(id)))}>Leave Mission</button></td> : <td><button className="join" type="button" onClick={() => (dispatch(joinMission(id)))}>Join Mission</button></td>}
     </tr>
   );
 };
