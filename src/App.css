@@ -81,9 +81,9 @@ section {
   grid-template-rows: auto;
   gap: 0 0;
   border-radius: 5px;
-  box-shadow: 10px 0 53px -20px rgba(0, 0, 0, 0.43);
   -webkit-box-shadow: 10px 0 53px -20px rgba(0, 0, 0, 0.43);
   -moz-box-shadow: 10px 0 53px -20px rgba(0, 0, 0, 0.43);
+  box-shadow: 10px 0 53px -20px rgba(0, 0, 0, 0.43);
 }
 
 .ImgContainer {
@@ -110,7 +110,8 @@ section {
   padding: 0.8rem 2rem;
   border-radius: 5px;
   cursor: pointer;
-  
+}
+
 #missionSection table {
   margin: 15px;
   border-radius: 10px;
