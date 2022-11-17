@@ -65,7 +65,7 @@ const CardRocket = (props) => {
           type="button"
           onClick={() => dispatch(reserve(id))}
         >
-          {reserved ? 'Cancel Reservation' : 'Reserve Rocket'}
+          {reserved ? <div className="white">Cancel Reservation</div> : 'Reserve Rocket'}
         </button>
       </div>
     </div>
