@@ -5,7 +5,7 @@ import Mission from '../components/Mission';
 const Missions = () => {
   const missionArray = useSelector((state) => state.missions);
   return (
-    <section>
+    <section id="missionSection">
       <table>
         <thead>
           <tr>
@@ -16,12 +16,13 @@ const Missions = () => {
           </tr>
         </thead>
         <tbody>
-          {missionArray.map((mission) => (
+          {missionArray.map((item) => (
             <Mission
-              key={mission.key}
-              mission={mission.mission}
-              description={mission.description}
-              status={mission.status}
+              key={item.mission_id}
+              id={item.mission_id}
+              mission={item.mission_name}
+              description={item.description}
+              isReserved={(('reserved' in item) ? item.reserved : false)}
             />
           ))}
         </tbody>
