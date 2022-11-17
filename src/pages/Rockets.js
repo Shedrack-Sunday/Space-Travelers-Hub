@@ -21,6 +21,7 @@ function Rockets() {
           description={rocket.description}
           id={rocket.id}
           flickrImg={rocket.flickrImg[0]}
+          reserved={rocket.reserved}
         />
       ))}
     </div>
@@ -29,7 +30,7 @@ function Rockets() {
 
 const CardRocket = (props) => {
   const {
-    id, name, description, flickrImg,
+    id, name, description, flickrImg, reserved,
   } = props;
   const dispatch = useDispatch();
   return (
@@ -47,17 +48,32 @@ const CardRocket = (props) => {
       </div>
       <div className="MainContainer">
         <h2>{name}</h2>
-        <p>{description}</p>
+        <div>
+          {reserved ? (
+            <div>
+              <p>
+                <span>Reserved</span>
+                {description}
+              </p>
+            </div>
+          ) : (
+            description
+          )}
+        </div>
         <button
           className="button"
           type="button"
           onClick={() => dispatch(reserve(id))}
         >
-          Reserve Rocket
+          {reserved ? <div className="white">Cancel Reservation</div> : 'Reserve Rocket'}
         </button>
       </div>
     </div>
   );
+};
+
+CardRocket.defaultProps = {
+  reserved: false,
 };
 
 CardRocket.propTypes = {
@@ -65,6 +81,7 @@ CardRocket.propTypes = {
   name: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   flickrImg: PropTypes.string.isRequired,
+  reserved: PropTypes.bool,
 };
 
 export default Rockets;

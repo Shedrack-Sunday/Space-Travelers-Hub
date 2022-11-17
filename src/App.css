@@ -112,6 +112,38 @@ section {
   cursor: pointer;
 }
 
+span {
+  background-color: #1ca3b9;
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #fff;
+  padding: 0.2rem;
+  margin-right: 0.5rem;
+  border-radius: 2px;
+}
+
+.white {
+  background: gray;
+}
+
+.WrapperProfile {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-around;
+  margin: 0 auto;
+  max-width: 60rem;
+  text-align: left;
+}
+
+.WrapperCard {
+  border: 1px solid gray;
+  border-radius: 3px;
+  margin-top: 1rem;
+  padding: 1rem;
+  width: 18rem;
+}
+
 #missionSection table {
   margin: 15px;
   border-radius: 10px;
