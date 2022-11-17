@@ -1,28 +1,58 @@
-/* eslist-disable */
 import React from 'react';
+import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
 import { selectRockets, selectStatusRocket } from '../redux/rockets/rockets';
 
 function Rockets() {
   const rockets = useSelector(selectRockets);
   const status = useSelector(selectStatusRocket);
+  console.log(rockets);
 
   if (status === 'loading') return <h1>Loading...</h1>;
   return (
-    <section>
-      <h1>Rockets</h1>
-      {status === 'done'
-        && rockets.map((rocket) => (
-          <div key={rocket.id}>
-            <p>{`${rocket.name} ${rocket.type}`}</p>
-            <img
-              src={rocket.flickrImg[0]}
-              alt="imagen"
-              style={{ height: '250px', with: '250px' }}
-            />
-          </div>
-        ))}
-    </section>
+    <div className="WrapperRockets">
+      {rockets.map((rocket) => (
+        <CardRocket
+          key={rocket.id}
+          name={rocket.name}
+          description={rocket.description}
+          flickrImg={rocket.flickrImg}
+        />
+      ))}
+    </div>
   );
 }
+
+const CardRocket = (props) => {
+  const { name, description, flickrImg } = props;
+  return (
+    <div className="CardContainer">
+      <div className="ImgContainer">
+        <img
+          src={flickrImg[0]}
+          alt="imagen"
+          style={{
+            objectFit: 'cover',
+            minHeight: '300px',
+            width: '100%',
+          }}
+        />
+      </div>
+      <div className="MainContainer">
+        <h2>{name}</h2>
+        <p>{description}</p>
+        <button className="button" type="button">
+          Reserve Rocket
+        </button>
+      </div>
+    </div>
+  );
+};
+
+CardRocket.propTypes = {
+  name: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  flickrImg: PropTypes.arrayOf.isRequired,
+};
+
 export default Rockets;
