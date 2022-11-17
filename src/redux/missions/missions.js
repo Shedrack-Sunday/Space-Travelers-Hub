@@ -2,6 +2,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 
 const GET_MISSIONS = 'space-travelers-hub/missions/GET_MISSIONS';
 const JOIN_MISSION = 'space-travelers-hub/missions/JOIN_MISSION';
+const LEAVE_MISSION = 'space-travelers-hub/missions/LEAVE_MISSION';
 
 const initialState = [];
 
@@ -12,6 +13,13 @@ export default function missionReducer(state = initialState, action) {
       const newState = state.map((mission) => {
         if (mission.mission_id !== action.payload) { return mission; }
         return { ...mission, reserved: true };
+      });
+      return newState;
+    }
+    case LEAVE_MISSION: {
+      const newState = state.map((mission) => {
+        if (mission.mission_id !== action.payload) { return mission; }
+        return { ...mission, reserved: false };
       });
       return newState;
     }
@@ -30,5 +38,10 @@ export const getMissions = createAsyncThunk(
 
 export const joinMission = (id) => ({
   type: JOIN_MISSION,
+  payload: id,
+});
+
+export const leaveMission = (id) => ({
+  type: LEAVE_MISSION,
   payload: id,
 });
