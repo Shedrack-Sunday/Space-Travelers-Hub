@@ -123,11 +123,10 @@ span {
 }
 
 .white {
-  background-color: grays;
-
+  background: gray;
 }
 
-.WrapperProfile { 
+.WrapperProfile {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -137,7 +136,7 @@ span {
   text-align: left;
 }
 
-.WrapperCard { 
+.WrapperCard {
   border: 1px solid gray;
   border-radius: 3px;
   margin-top: 1rem;
