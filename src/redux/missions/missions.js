@@ -1,39 +1,32 @@
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+
 const GET_MISSIONS = 'space-travelers-hub/missions/GET_MISSIONS';
-const TOGGLE_STATUS = 'space-travelers-hub/missions/TOGGLE_STATUS';
 
-const initialState = [
-  {
-    key: '1',
-    mission: 'test',
-    description: 'testdescription',
-    status: true,
+const initialState = {
+  missions: [],
+  status: [],
+};
+
+export const getMissions = createAsyncThunk(
+  GET_MISSIONS,
+  async (url) => {
+    const response = await fetch(url).then((res) => res.json());
+    return response;
   },
-  {
-    key: '2',
-    mission: 'test2',
-    description: 'testdescription2',
-    status: false,
+);
+
+const missionSlice = createSlice({
+  name: 'missionState',
+  initialState,
+  reducers: {
   },
-];
-
-export default function missionReducer(state = initialState, action) {
-  switch (action.type) {
-    case GET_MISSIONS: return state;
-    case TOGGLE_STATUS: return [...state, action.payload];
-    default:
-      return state;
-  }
-}
-
-export const getMissions = () => ({
-  type: GET_MISSIONS,
-});
-
-export const toggleStatus = () => ({
-  type: TOGGLE_STATUS,
-  payload: {
-    mission: 'test',
-    description: 'testdescription',
-    status: true,
+  extraReducers: (builder) => {
+    builder
+      .addCase(getMissions.fulfilled, (state, action) => ({
+        ...state,
+        missions: action.payload,
+      }));
   },
 });
+
+export default missionSlice.reducer;
