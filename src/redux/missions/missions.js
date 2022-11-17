@@ -1,11 +1,24 @@
-import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import { createAsyncThunk } from '@reduxjs/toolkit';
 
 const GET_MISSIONS = 'space-travelers-hub/missions/GET_MISSIONS';
+const JOIN_MISSION = 'space-travelers-hub/missions/JOIN_MISSION';
 
-const initialState = {
-  missions: [],
-  status: [],
-};
+const initialState = [];
+
+export default function missionReducer(state = initialState, action) {
+  switch (action.type) {
+    case `${GET_MISSIONS}/fulfilled`: return action.payload;
+    case JOIN_MISSION: {
+      const newState = state.map((mission) => {
+        if (mission.mission_id !== action.payload) { return mission; }
+        return { ...mission, reserved: true };
+      });
+      return newState;
+    }
+    default:
+      return state;
+  }
+}
 
 export const getMissions = createAsyncThunk(
   GET_MISSIONS,
@@ -15,18 +28,7 @@ export const getMissions = createAsyncThunk(
   },
 );
 
-const missionSlice = createSlice({
-  name: 'missionState',
-  initialState,
-  reducers: {
-  },
-  extraReducers: (builder) => {
-    builder
-      .addCase(getMissions.fulfilled, (state, action) => ({
-        ...state,
-        missions: action.payload,
-      }));
-  },
+export const joinMission = (id) => ({
+  type: JOIN_MISSION,
+  payload: id,
 });
-
-export default missionSlice.reducer;
