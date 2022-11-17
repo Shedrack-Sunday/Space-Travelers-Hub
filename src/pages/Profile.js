@@ -24,7 +24,7 @@ function Profile() {
 const Card = (props) => {
   const { name } = props;
   return (
-  <div className="WrapperCard">
+    <div className="WrapperCard">
       <h3>{name}</h3>
     </div>
   );
