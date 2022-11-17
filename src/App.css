@@ -122,6 +122,24 @@ span {
   border-radius: 2px;
 }
 
+.WrapperProfile {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-around;
+  margin: 0 auto;
+  max-width: 60rem;
+  text-align: left;
+}
+
+.WrapperCard {
+  border: 1px solid gray;
+  border-radius: 3px;
+  margin-top: 1rem;
+  padding: 1rem;
+  width: 18rem;
+}
+
 #missionSection table {
   margin: 15px;
   border-radius: 10px;
