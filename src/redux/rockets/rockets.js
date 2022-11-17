@@ -1,8 +1,8 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
 const initialState = {
-  counterRocket: 0,
-  statusRockets: 'idle',
+  countRocket: 0,
+  statusRocket: 'idle',
   rockets: [],
 };
 
@@ -18,16 +18,31 @@ const rocketsSlice = createSlice({
   name: 'rockets',
   initialState,
   reducers: {
-    incrementRocket: (state) => ({
+    incrementedRocket: (state) => ({
       ...state,
-      counterRocket: state.counterRocket + 1,
+      countRocket: state.countRocket + 1,
     }),
+    reserve: (state, action) => {
+      const newRockets = state.rockets.map((rocket) => {
+        if (rocket.id === action.payload) {
+          if (!rocket.reserved) {
+            return { ...rocket, reserved: true };
+          }
+          return { ...rocket, reserved: !rocket.reserved };
+        }
+        return rocket;
+      });
+      return {
+        ...state,
+        rockets: newRockets,
+      };
+    },
   },
   extraReducers: (builder) => {
     builder
       .addCase(fetchApiRockets.pending, (state) => ({
         ...state,
-        statusRockets: 'loading',
+        statusRocket: 'loading',
       }))
       .addCase(fetchApiRockets.fulfilled, (state, action) => {
         const arrayRockets = action.payload.map((rocket) => ({
@@ -39,15 +54,15 @@ const rocketsSlice = createSlice({
         }));
         return {
           ...state,
-          statusRockets: 'done',
+          statusRocket: 'done',
           rockets: arrayRockets,
         };
       });
   },
 });
 
-export const { incrementRocket } = rocketsSlice.actions;
-export const selectCountRocket = (state) => state.rockets.counterRocket;
+export const { incrementedRocket, reserve } = rocketsSlice.actions;
+export const selectCountRocket = (state) => state.rockets.countRocket;
 export const selectRockets = (state) => state.rockets.rockets;
 export const selectStatusRocket = (state) => state.rockets.statusRocket;
 
