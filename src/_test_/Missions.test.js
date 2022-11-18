@@ -3,14 +3,14 @@ import { screen, render } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
 const Missions = () => (
-    <div>
-        <h1>Missions</h1>
-    </div>
+  <div>
+    <h1>Missions</h1>
+  </div>
 );
 
 describe('Rockets', () => {
-    test('render React component', () => {
-        render(<Missions />);
-        expect(screen.getByText('Missions')).toBeInTheDocument();
-    });
+  test('render React component', () => {
+    render(<Missions />);
+    expect(screen.getByText('Missions')).toBeInTheDocument();
+  });
 });
