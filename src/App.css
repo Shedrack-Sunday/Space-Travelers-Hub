@@ -122,10 +122,6 @@ span {
   border-radius: 2px;
 }
 
-.white {
-  background: gray;
-}
-
 .WrapperProfile {
   display: flex;
   flex-direction: row;
