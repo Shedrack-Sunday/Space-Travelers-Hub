@@ -8,7 +8,7 @@ const Missions = () => (
   </div>
 );
 
-describe('Rockets', () => {
+describe('Missions', () => {
   test('render React component', () => {
     render(<Missions />);
     expect(screen.getByText('Missions')).toBeInTheDocument();
