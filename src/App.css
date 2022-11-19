@@ -1,0 +1,220 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --gray1: #c9c9c9;
+  --gray2: #f2f2f2;
+  --blue: #0290ff;
+  --darkGray: gray;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  padding: 3vh;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 3px solid gray;
+  padding: 0 2vw 2vw 2vw;
+}
+
+header > div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+header img {
+  height: 100px;
+}
+
+header > nav > ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+  font-size: 1.5rem;
+}
+
+header > nav a {
+  text-decoration: none;
+  color: gray;
+  transition: all 0.2s;
+}
+
+header > nav a.active {
+  text-decoration: underline;
+  color: black;
+}
+
+section {
+  width: 100%;
+  height: 100%;
+}
+
+.WrapperRockets {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 60rem;
+}
+
+.CardContainer {
+  margin: 1rem auto;
+  padding: 0.5rem;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: auto;
+  gap: 0 0;
+  border-radius: 5px;
+  -webkit-box-shadow: 10px 0 53px -20px rgba(0, 0, 0, 0.43);
+  -moz-box-shadow: 10px 0 53px -20px rgba(0, 0, 0, 0.43);
+  box-shadow: 10px 0 53px -20px rgba(0, 0, 0, 0.43);
+}
+
+.ImgContainer {
+  width: 100%;
+  padding: 0;
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+.MainContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+  justify-content: flex-start;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.button {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #fff;
+  background-color: #007bff;
+  padding: 0.8rem 2rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+span {
+  background-color: #1ca3b9;
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #fff;
+  padding: 0.2rem;
+  margin-right: 0.5rem;
+  border-radius: 2px;
+}
+
+.WrapperProfile {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-around;
+  margin: 0 auto;
+  max-width: 60rem;
+  text-align: left;
+}
+
+.profileList {
+  list-style-type: none;
+}
+
+.profileList > li:not(:last-child) {
+  border-top: 1px solid var(--gray1);
+  border-left: 1px solid var(--gray1);
+  border-right: 1px solid var(--gray1);
+  border-bottom: 1px solid transparent;
+}
+
+.profileList > li:last-child {
+  border: 1px solid var(--gray1);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.profileList > li:first-of-type {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.WrapperCard {
+  padding: 0 1rem 0 1rem;
+  width: 18rem;
+}
+
+#missionSection table {
+  margin: 15px;
+  border-radius: 10px;
+  border: 1px solid rgb(192, 192, 192);
+  border-collapse: collapse;
+}
+
+#missionSection table td,
+#missionSection table th {
+  border: 1px solid rgb(192, 192, 192);
+  padding: 10px;
+}
+
+#missionSection table > tbody > tr:nth-child(odd) {
+  background-color: rgb(236, 236, 236);
+}
+
+.badge {
+  background-color: gray;
+  color: white;
+  border-radius: 10px;
+  padding: 3px;
+  text-align: center;
+  transition: all 0.3s;
+}
+
+.badge.active {
+  background-color: #18a2b8;
+}
+
+#missionSection button {
+  background-color: transparent;
+  border: 1px solid gray;
+  color: gray;
+  border-radius: 10px;
+  padding: 3px;
+  transition: all 0.2s;
+}
+
+#missionSection button:hover {
+  background-color: gray;
+  border: 1px solid gray;
+  color: white;
+}
+
+#missionSection button.leave {
+  background-color: transparent;
+  border: 1px solid tomato;
+  color: tomato;
+  border-radius: 10px;
+  padding: 3px;
+  transition: all 0.2s;
+}
+
+#missionSection button.leave:hover {
+  background-color: tomato;
+  border: 1px solid tomato;
+  color: white;
+}
