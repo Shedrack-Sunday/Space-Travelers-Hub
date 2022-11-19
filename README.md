@@ -37,14 +37,12 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [Space Traveller Hub] <a name="about-project"></a>
+# 📖 Space Traveller Hub <a name="about-project"></a>
 
 > The Web app contains three pages which consist of a rocket, missions and profile page.
 > the Rockets can be reserved while the missions can be joined.
 > All data comes from SpaceX's external API
 
-
-**[your_project__name]** is a...
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -67,9 +65,9 @@
 
 > Describe between 1-3 key features of the application.
 
-- **[The rocket can be reserved and cancelled]**
-- **[The Misions can also be reserved and cancelled]**
-- **[Display of all reserved Missions and Rockets can be seen in the profile page]**
+- **The rocket can be reserved and cancelled**
+- **The Misions can also be reserved and cancelled**
+- **Display of all reserved Missions and Rockets can be seen in the profile pag**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -163,9 +161,9 @@ npm test
 ## 🔭 Future Features <a name="future-features"></a>
 
 
-- [ ] **[A record of previous reservations]**
-- [ ] **[A suggestion Popup]**
-- [ ] **[History page of all Rockets and missions]**
+- [ ] **A record of previous reservations**
+- [ ] **A suggestion Popup**
+- [ ] **History page of all Rockets and missions**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -196,13 +194,13 @@ to make it better. We'll be more than happy to help
 ## ❓ FAQ <a name="faq"></a>
 
 
-- **[Do i need the current React dependencies?]**
+- **Do i need the current React dependencies?**
 
-  - [Yes you do]
+  - Yes you do]
 
-- **[Do i need to be connected to the internet?]**
+- **Do i need to be connected to the internet?**
 
-  - [Yes! the server where the API is hosted needs internet access to render the data]
+  - Yes! the server where the API is hosted needs internet access to render the data]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
